@@ -1,0 +1,7 @@
+{
+	"sonar": {
+		"enabled": true,
+		"destination": "SonarQubeLocal",
+		"propertiesFile": "sonar-project.properties"
+	}
+}

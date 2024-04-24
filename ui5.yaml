@@ -1,0 +1,35 @@
+specVersion: "3.1"
+metadata:
+  name: sap.ui.demo.orderbrowser
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: https://sapes5.sapdevcenter.com
+            client: "002"
+            destination: ES5
+          - path: /here/goes/your/serviceUrl/
+            url: https://sapes5.sapdevcenter.com
+            client: "002"
+            destination: ES5
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: sap.ui.demo.orderbrowser
+        ui5Theme: sap_fiori_3
