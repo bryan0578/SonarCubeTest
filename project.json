@@ -2,6 +2,7 @@
 	"sonar": {
 		"enabled": true,
 		"destination": "SonarQubeLocal",
-		"propertiesFile": "sonar-project.properties"
+		"propertiesFile": "sonar-project.properties",
+        "workspace": "local"
 	}
 }
