@@ -27,6 +27,7 @@ sap.ui.define([
 		onInit : function () {
 			// Control state model
 			var oList = this.byId("list"),
+				oList1 = this.byId("list1"),
 				oViewModel = this._createViewModel(),
 				// Put down master list's original value for busy indicator delay,
 				// so it can be restored later on. Busy handling on the master list is
